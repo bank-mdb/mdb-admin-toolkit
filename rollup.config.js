@@ -3,7 +3,7 @@ import json from "rollup-plugin-json";
 import commonjs from "rollup-plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import requireContext from "rollup-plugin-require-context";
-
+// import { uglify } from "rollup-plugin-uglify";
 /* format:
   cjs: node.js 环境
   iife: 浏览器环境
@@ -11,13 +11,14 @@ import requireContext from "rollup-plugin-require-context";
  */
 export default {
   input: "src/index.js",
+  // input: "src/test.js",
   format: "umd", //我们的类库既能被nodejs直接使用，又能在浏览器中使用，那么我们就使用umd的配置项
   output: {
     name: "mdb-admin-toolkit",
     file: "dist/main.min.js",
     format: "umd",
   },
-  external: ["axios"],
+  external: ["axios", "xss"],
   plugins: [
     resolve(), //rollup-plugin-node-resolve 插件可以告诉 Rollup 如何查找外部模块
     json(),

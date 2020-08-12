@@ -1,9 +1,9 @@
 # Usage
 
 ```
-import {eventBus} from 'mdb-admin-toolkit';
+import {VueBus} from 'mdb-admin-toolkit';
 
-Vue.use(eventBus);
+Vue.use(VueBus);
 ```
 
 ## Listen and clean
